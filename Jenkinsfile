@@ -16,16 +16,7 @@ stages{
         }
     }
   }
-  stage('Approval'){
-    when { branch 'main'}
-    steps {
-       script {
-          waitUntil {
-            fileExists('dummyfile')
-          }
-       }
-     }
-   }
+
    stage('Terraform Apply'){
      when { branch 'main'}
      steps {
